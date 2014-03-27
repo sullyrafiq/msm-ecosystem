@@ -3,12 +3,19 @@
 # ~~~~
 
 # Home page
-GET         /                    controllers.Application.index()
+GET         /                               controllers.Application.index()
 
-GET         /login               controllers.Login.login()
-POST        /login               controllers.Login.access()
+GET         /login                          controllers.Login.login()
+POST        /login                          controllers.Login.access()
 
-GET         /data                controllers.Profile.data(callback: String)
+GET         /data                           controllers.Profile.data(callback: String)
+
+GET         /vehicles/:postcode             controllers.Services.cars(postcode: String)
+GET         /vehicles/insurance/:reg        controllers.Services.motorQuotes(reg: String)
+GET         /homes/:postcode                controllers.Services.homes(postcode: String)
+GET         /homes/insurance/:postcode      controllers.Services.homeQuotes(postcode: String)
+
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file        controllers.Assets.at(path="/public", file)
