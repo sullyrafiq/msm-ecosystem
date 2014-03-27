@@ -16,7 +16,7 @@ import static play.mvc.Results.forbidden;
  * Time: 18:50
  * To change this template use File | Settings | File Templates.
  */
-public class MsmDeadboltHandler implements DeadboltHandler {
+public class MSMDeadboltHandler implements DeadboltHandler {
 
     @Override
     public F.Promise<SimpleResult> beforeAuthCheck(Http.Context context) {
