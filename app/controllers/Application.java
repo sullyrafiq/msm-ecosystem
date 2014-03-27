@@ -17,4 +17,8 @@ public class Application extends Controller {
         return ok("You have access");
     }
 
+    public static Result introduction() {
+    	return ok(introduction.render("MSM Eco-System"));
+    }
+
 }
