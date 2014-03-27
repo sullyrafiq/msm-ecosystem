@@ -1,12 +1,93 @@
-div#example-widget-container {
-/*    color: white;
-    background-color: green;
-    border: 1px solid black;
-    height: 200px;
-    width: 500px;*/
+/********* Login widget CSS **********/
+@font-face {
+    font-family: "ProximaBold";
+    font-style: normal;
+    font-weight: bold;
+    src: url('/assets/fonts/proximanova-black-webfont.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/proximanova-black-webfont.woff') format('woff'), url('/assets/fonts/proximanova-black-webfont.ttf') format('truetype'), url('/assets/fonts/proximanova-black-webfont.svg#ProximaNovaBlack') format('svg');
 }
 
-.img-circle .slick {
-	height: 100px;
-	width: 100px;
+.display-none {display: none;}
+
+.msm-bar {
+    background-color: #562873;
+    color: #FFFFFF;
+    margin: 0 auto;
+    border-top: solid 1px #fff;
 }
+
+.msm-bar .container {
+    height: 130px;
+    background-image: url('/assets/images/msm-logo.png');
+    background-size: 150px auto;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.msm-bar .container div {float: left;}
+.msm-bar .container div.button-container {float: none; display: inline-block;}
+
+
+.signin, .signedin { background-color: #ffffff; border-radius: 7px; padding: 10px;margin: 20px 0 20px 150px; width:55%;}
+.signin h3, .signedin h3 {color: #00aeef; font-size: 18px; margin:0 0 10px 0; }
+.signin h3 strong, .signedin h3 strong {font-family: 'ProximaBold'; font-size: 20px;}
+.signin input[type='email'],
+.signin input[type='password'] { background-color: white; border: 2px solid #DEDEDE; -webkit-appearance: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;box-sizing: border-box; padding: 10px 0 10px 10px; width: 40%; border-radius: 5px; }
+
+.signin .btn,
+.signedin .btn {
+    text-align: center;
+    font-size: 16px;
+    background-color: #48A415;
+    border-radius: 25px;
+    border: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 10px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 90px;
+}
+
+.msm-bar .header-text {width:27%; margin: 20px; min-height: 95px; vertical-align: middle;}
+.msm-bar .header-text p {margin: 0; padding:10px 0 0; line-height: normal;font-family: 'ProximaBold'; font-size:22px; text-transform: uppercase;}
+.msm-bar .header-text span.blue-text {color: #00aeef;}
+.msm-bar .header-text span.pink-text {color: #ec008c;}
+
+@media only screen and (max-width: 1040px) {
+    .msm-bar .header-text {width:25%; margin-top: 10px;}
+    .signin h3 {font-size: 14px; }
+    .signin h3 strong {font-size: 14px;}
+    .signin .btn {font-size: 14px;}
+}
+
+@media (max-width: 768px) {
+    .msm-bar .header-text {display: none;}
+    .msm-bar .signin { width: 70%;}
+}
+
+@media (max-width: 767px) {
+    .msm-bar .signin .btn {text-align: center; margin: 20px auto 0; }
+}
+
+@media (max-width: 400px) {
+    .msm-bar .container {background:none;}
+    .msm-bar .signin {margin: 20px 2%; width: auto;}
+    .msm-bar .signin input[type='email'],
+    .msm-bar .signin input[type='password'] {width:48%;}
+
+    .msm-bar .signin .button-container {width: 100%;}
+    .msm-bar .signin .btn {text-align: center; margin: 20px auto 0; padding: 20px; width: 50%; }
+    .msm-bar .signin .powered-by {display: block; float: right; margin-top: 10px;}
+}
+
+
+/********* End of Login Widget CSS **********/

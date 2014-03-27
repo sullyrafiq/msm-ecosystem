@@ -42,7 +42,6 @@
     /******** Our main function ********/
     function main() {
         jQuery(document).ready(function($) {
-
             loadCss();
             loadHtml();
         });
@@ -65,9 +64,28 @@
             url: "http://localhost:9000/sign-in"
 
         }).done(function(data) {
-            $('#signin-widget-container').html(data.html);
-
+            $('div.msm-bar').html(data.html);
+            addHandlerForLogin();
         });
+    }
+
+    function addHandlerForLogin() {
+        $("input[type=submit]").on("click", function(e) {
+            e.preventDefault();
+
+            var email = $("input[type=email]").val();
+            var password = $("input[type=password]").val();
+
+            $.ajax({
+                contentType:'application/json',
+                dataType:'jsonp',
+                type: 'GET',
+                url: "http://localhost:9000/ajax-login?email=" + email + "&password=" + password
+
+            }).done(function(data) {
+                loadHtml();
+            });
+        })
     }
 
 })(); // We call our anonymous function immediately

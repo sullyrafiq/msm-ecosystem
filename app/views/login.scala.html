@@ -1,0 +1,14 @@
+@(userForm: Form[UserMSM])
+
+@import helper._
+
+@main("Login") {
+
+     @form(routes.Login.access()) {
+
+         <input type="text" name="username" placeholder="Enter your username" />
+         <input type="text" name="password" placeholder="Enter your password" />
+         <input type="submit" name="login" value="Submit">
+
+     }
+}

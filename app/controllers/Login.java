@@ -1,49 +1,89 @@
 package controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.msm.ecosystem.security.PrincipalStore;
-import com.msm.ecosystem.util.UserIdentifierGenerator;
-import models.User;
+import com.msm.ecosystem.security.SecurityUtils;
+import com.msm.ecosystem.util.JsonUtils;
+import models.UserMSM;
 import play.data.Form;
-import play.libs.F;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
-
-import static java.lang.String.format;
-import static play.data.Form.form;
+import views.html.index;
 
 /**
- * Created by sully.rafiq on 27/03/2014.
+ * Created with IntelliJ IDEA.
+ * User: sully.rafiq
+ * Date: 27/03/14
+ * Time: 19:14
+ * To change this template use File | Settings | File Templates.
  */
 public class Login extends Controller {
 
-    public static Result login() {
-        JsonNode jsonNode = request().body().asJson();
-        Form<User> userForm = form(User.class).bind(jsonNode);
+    static Form<UserMSM> userForm = Form.form(UserMSM.class);
 
-        if(userForm.hasErrors()) {
-            String json = format("{\"success\": false, \"errors\": %s}", userForm.errorsAsJson().toString());
-            return createBadRequestJsonResult(json);
-
+    public static Result index() {
+        if (SecurityUtils.isSubjectPresent(session())) {
+            return redirect(routes.Login.success());
         } else {
-            User user = userForm.get();
-            user.uniqueIdentifier = UserIdentifierGenerator.generateUniqueId();
-
-            PrincipalStore.login(user);
-            return createOkRequestJsonResult();
+            return ok(views.html.login.render(userForm));
         }
     }
 
-    private static Result createBadRequestJsonResult(String json) {
-        return badRequest(json).as("application/json");
+    public static Result logout() {
+        SecurityUtils.removeUserFromSession(session());
+        return ok("You have been logged out");
     }
 
-    private static Result createOkRequestJsonResult() {
-        ObjectNode result = Json.newObject();
-        result.put("status", "OK");
-        return ok(result);
+    public static Result success() {
+        return ok("You are logged in");
     }
+
+    public static Result access() {
+        Form<UserMSM> filledUserForm = userForm.bindFromRequest();
+
+        if (filledUserForm.hasErrors()) {
+            return badRequest(views.html.login.render(filledUserForm));
+
+        } else {
+            UserMSM userMSM = filledUserForm.get();
+            userMSM.setRole("admin");
+            SecurityUtils.storeUserInSession(session(), userMSM);
+        }
+
+        return redirect(routes.Login.success());
+    }
+
+    public static Result ajaxLogin(String callback, String email, String password) throws JsonProcessingException {
+
+        ObjectNode jsonNode = Json.newObject();
+        jsonNode.put("username", email);
+        jsonNode.put("password", password);
+
+        Form<UserMSM> userMSMForm = Form.form(UserMSM.class).bind(jsonNode);
+
+        if (userMSMForm.hasErrors()) {
+            return createBadJsonPWrappedResult(callback, String.format("{\"success\": false, \"errors\": %s}", userMSMForm.errorsAsJson()));
+
+        } else {
+            UserMSM userMSM = userMSMForm.get();
+            userMSM.setRole("admin");
+            SecurityUtils.storeUserInSession(session(), userMSM);
+
+            return createOKJsonPWrappedResult(callback, JsonUtils.toString(Json.newObject()));
+        }
+    }
+
+    private static Result createOKJsonPWrappedResult(String callback, String json) {
+        String content = callback + "(" + json + ")";
+        return ok(content);
+    }
+
+    private static Result createBadJsonPWrappedResult(String callback, String json) {
+        String content = callback + "(" + json + ")";
+        return ok(content);
+    }
+
 
 }
