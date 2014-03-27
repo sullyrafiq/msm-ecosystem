@@ -10,7 +10,7 @@ import play.mvc.Result;
 /**
  * Created by sully.rafiq on 27/03/2014.
  */
-public class Profile extends Controller {
+public class Widgets extends Controller {
 
     public static Result signIn(String callback) throws JsonProcessingException {
 
