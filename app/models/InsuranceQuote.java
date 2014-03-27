@@ -13,6 +13,10 @@ public class InsuranceQuote {
 
     private final double premium;
 
+    private final String logoUrl;
+
+    private final String detailsUrl;
+
     public String getCoverType() {
         return coverType;
     }
@@ -21,10 +25,19 @@ public class InsuranceQuote {
         return premium;
     }
 
-    public InsuranceQuote(String coverType, double premium) {
+    public String getLogoUrl() {
+        return logoUrl;
+    }
+
+    public String getDetailsUrl() {
+        return detailsUrl;
+    }
+
+    public InsuranceQuote(String coverType, double premium, String logoUrl, String detailsUrl) {
 
         this.coverType = coverType;
         this.premium = premium;
-
+        this.logoUrl = logoUrl;
+        this.detailsUrl = detailsUrl;
     }
 }
