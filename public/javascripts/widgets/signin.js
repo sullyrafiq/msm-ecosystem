@@ -43,31 +43,30 @@
     function main() {
         jQuery(document).ready(function($) {
 
-            /******* Load CSS *******/
-            var css_link = $("<link>", {
-                rel: "stylesheet",
-                type: "text/css",
-                href: "http://localhost:9000/assets/stylesheets/main.css"
-            });
-            css_link.appendTo('head');
+            loadCss();
+            loadHtml();
+        });
+    }
 
+    function loadCss() {
+        var css_link = $("<link>", {
+            rel: "stylesheet",
+            type: "text/css",
+            href: "http://localhost:9000/assets/stylesheets/main.css"
+        });
+        css_link.appendTo('head');
+    }
 
-            /******* Load HTML *******/
-            $.ajax({
-                contentType:'application/json',
-                dataType:'jsonp',
-                type: 'GET',
-                url: "http://localhost:9000/data"
-            })
-            .always(function() {
-                // remove loading image maybe
-            })
-            .fail(function() {
-                // handle request failures
+    function loadHtml() {
+        $.ajax({
+            contentType:'application/json',
+            dataType:'jsonp',
+            type: 'GET',
+            url: "http://localhost:9000/sign-in"
 
-            }).done(function(data) {
-                $('#example-widget-container').html(data.html);
-            });
+        }).done(function(data) {
+            $('#signin-widget-container').html(data.html);
+
         });
     }
 
