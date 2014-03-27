@@ -8,8 +8,6 @@ POST        /login               controllers.Login.login()
 
 GET         /sign-in             controllers.Profile.signIn(callback: String)
 
-GET         /data                           controllers.Profile.data(callback: String)
-
 GET         /vehicles/:postcode             controllers.Services.cars(postcode: String)
 GET         /vehicles/insurance/:reg        controllers.Services.motorQuotes(reg: String)
 GET         /homes/:postcode                controllers.Services.homes(postcode: String)
