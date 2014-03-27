@@ -4,6 +4,7 @@ import be.objectify.deadbolt.core.models.Permission;
 import be.objectify.deadbolt.core.models.Role;
 import be.objectify.deadbolt.core.models.Subject;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.validator.constraints.NotEmpty;
 import play.data.validation.Constraints;
 
 import java.util.Arrays;
@@ -20,9 +21,13 @@ import java.util.List;
 public class UserMSM implements Subject {
 
     @Constraints.Required
+    @Constraints.MaxLength(value = 255)
+    @Constraints.Email
     private String username;
 
+    @NotEmpty
     @Constraints.Required
+    @Constraints.MinLength(value = 7)
     private String password;
 
     private String role;

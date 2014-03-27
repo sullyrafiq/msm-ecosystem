@@ -64,6 +64,16 @@ public class SecurityUtils {
     }
 
     /**
+     * Determine if a user is logged in
+     *
+     * @param session
+     * @return
+     */
+    public static boolean isSubjectPresent(Http.Session session) {
+        return session.get(SESSION_USER) != null;
+    }
+
+    /**
      * Returns the ObjectMapper, throws IllegalStateException if variable not set.
      * @return The specialised ObjectMapper.
      */

@@ -7,6 +7,7 @@ GET         /                    controllers.Application.index()
 GET         /restricted          controllers.Application.restricted()
 
 # Login Controller
+GET         /ajax-login          controllers.Login.ajaxLogin(callback: String, email: String, password: String)
 GET         /login               controllers.Login.index()
 POST        /login               controllers.Login.access()
 GET         /logout              controllers.Login.logout()
