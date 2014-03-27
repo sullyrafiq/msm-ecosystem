@@ -5,6 +5,7 @@
 <html>
     <head>
         <title>@title</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=1" />
 		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap-3.0.3/css/bootstrap.css")">
 		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap-3.0.3/css/bootstrap-theme.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
@@ -12,46 +13,6 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
     </head>
     <body>
-    <div class="navbar-wrapper">
-      <div class="container">
-
-        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Moneysupermarket Group Eco-system</a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -64,10 +25,9 @@
         <div class="item active" style="background-color: #562873">
           <div class="container">
             <div class="carousel-caption">
-              <img class="img-rounded" src="@routes.Assets.at("images/msm-logo-secondary.png")" alt="MoneySuperMarket.com" style="width:20%;  min-width:100px; margin-right: -3%">
-              <h1>Moneysupermarket Group Eco-System.</h1>
-              <p>Allowing businesses all over the UK to harness the power of our epic money saving services.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              <img class="img-rounded" src="@routes.Assets.at("images/msm-logo-secondary.png")" alt="MoneySuperMarket.com" style="width:30%;  min-width:200px; margin-right: -3%">
+              <h1>MSM Ecosystem.</h1>
+              <p>Using our services to create a richer experience on third party sites</p>
             </div>
           </div>
         </div>
@@ -75,7 +35,7 @@
           <div class="container">
             <div class="carousel-caption">
               <img src="@routes.Assets.at("images/team.JPG")" alt="Slick-Industries" style="width:40%;  min-width:200px;">
-              <h1>The Tribe!</h1>
+              <h1>Our Tribe!</h1>
               <p>Slick Drive Squad, Slick Move Squad, MSM Eco Squad </p>
             </div>
           </div>
@@ -95,17 +55,17 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <div class="col-lg-6" style="text-align:center">
-          <img class="" src="@routes.Assets.at("images/slick-drive.png")" alt="Generic placeholder image">
-          <h2>Case study: Slick-Drive</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        <div class="col-sm-6" style="text-align:center">
+          <img class="" src="@routes.Assets.at("images/slick-drive-pink-circle.png")" alt="Generic placeholder image">
+          <h2>Looking for a car?</h2>
+          <p>By partnering with a car trading website, MoneySuperMarket are able to power real time pricing for a range of products. These include car insurance, breakdown cover and gap insurance.</p>
+          <p><a class="btn btn-default" target="_blank" href="http://test.slickindustries.co.uk/drive" role="button">Go to site &raquo;</a></p>
         </div><!-- /.col-lg-6 -->
-        <div class="col-lg-6" style="text-align:center">
-          <img class="" src="@routes.Assets.at("images/slick-move.png")" alt="Generic placeholder image">
-          <h2>Case study: Slick-Move</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        <div class="col-sm-6" style="text-align:center">
+          <img class="" src="@routes.Assets.at("images/slick-move-blue-circle.png")" alt="Generic placeholder image">
+          <h2>Looking for a house?</h2>
+          <p>The user experience of a property site was improved by displaying accurate costs of household bills, such as insurance, broadband and energy. This feature is again powered by MoneySuperMarket.</p>
+          <p><a class="btn btn-default" target="_blank" href="http://test.slickindustries.co.uk/move" role="button">Go to site &raquo;</a></p>
         </div><!-- /.col-lg-6 -->
       </div><!-- /.row -->
 
@@ -116,8 +76,8 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Sign-in with your MSM account. <span class="text-muted">Personalised content.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">MSM sign-in. <span class="text-muted">Personalised content.</span></h2>
+          <p class="lead">For existing MoneySuperMarket users, the sign-in feature can be used to improve the accuracy of pricing later in the journey. New users are prompted to visit our site and create an account.</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
@@ -131,8 +91,8 @@
           <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
         </div>
         <div class="col-md-7">
-          <h2 class="featurette-heading">Real-time savings! <span class="text-muted">Using My Profile.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Real-time savings. <span class="text-muted">The power of My Profile data.</span></h2>
+          <p class="lead">When signed-in, we can use what we already know about you to provide accurate pricing on a range of products.</p>
         </div>
       </div>
 
@@ -140,11 +100,23 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Complete your purchase. <span class="text-muted">On any device.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Complete your purchase. <span class="text-muted">Or come back later.</span></h2>
+          <p class="lead">Clicking on your chosen product will pass you through MoneySuperMarket and onto the associated provider. If you're just researching, you can easily come back to your enquiry through My Profile.</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Any device, any time. <span class="text-muted">Responsive features.</span></h2>
+          <p class="lead">The ecosystem's features are built to work across a range of devices, making it easy to save money wherever you are.</p>
         </div>
       </div>
 
