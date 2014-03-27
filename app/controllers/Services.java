@@ -1,5 +1,6 @@
 package controllers;
 
+import be.objectify.deadbolt.java.actions.SubjectPresent;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.msm.ecosystem.util.JsonUtils;
@@ -24,6 +25,7 @@ import java.util.List;
 
 public class Services extends Controller {
 
+    @SubjectPresent
     public static Result cars(String postCode) throws JsonProcessingException {
 
         ServicesDao servicesDao = new ServicesDao();
@@ -39,6 +41,7 @@ public class Services extends Controller {
         return ok(result).as("application/json");
     }
 
+    @SubjectPresent
     public static Result motorQuotes(String registration) throws JsonProcessingException {
 
         ServicesDao servicesDao = new ServicesDao();
@@ -54,6 +57,7 @@ public class Services extends Controller {
         return ok(result).as("application/json");
     }
 
+    @SubjectPresent
     public static Result homes(String postCode) throws JsonProcessingException {
 
         ServicesDao servicesDao = new ServicesDao();
@@ -70,6 +74,7 @@ public class Services extends Controller {
 
     }
 
+    @SubjectPresent
     public static Result homeQuotes(String postCode) throws JsonProcessingException {
 
         ServicesDao servicesDao = new ServicesDao();
