@@ -8,7 +8,11 @@ import views.html.*;
 public class Application extends Controller {
 
     public static Result index() {
-        return redirect(routes.Login.login());
+        return ok("Up and running");
+    }
+
+    public static Result introduction() {
+    	return ok(introduction.render("MSM Eco-System"));
     }
 
 }

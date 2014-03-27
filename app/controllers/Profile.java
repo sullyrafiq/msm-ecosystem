@@ -1,7 +1,6 @@
 package controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.msm.ecosystem.util.JsonUtils;
 import play.libs.Json;
@@ -13,15 +12,15 @@ import play.mvc.Result;
  */
 public class Profile extends Controller {
 
-    public static Result data(String callback) throws JsonProcessingException {
+    public static Result signIn(String callback) throws JsonProcessingException {
 
         ObjectNode result = Json.newObject();
-        result.put("html", "<p>You need to login</p>");
+        result.put("html", "You need to log in");
 
-        return createJsonpWrappedResult(callback, JsonUtils.toString(result));
+        return createJsonPWrappedResult(callback, JsonUtils.toString(result));
     }
 
-    private static Result createJsonpWrappedResult(String callback, String json) {
+    private static Result createJsonPWrappedResult(String callback, String json) {
         String content = callback + "(" + json + ")";
         return ok(content);
     }
