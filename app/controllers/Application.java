@@ -11,4 +11,8 @@ public class Application extends Controller {
         return redirect(routes.Login.login());
     }
 
+    public static Result introduction() {
+    	return ok(introduction.render("MSM Eco-System"));
+    }
+
 }
