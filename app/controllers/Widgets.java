@@ -13,7 +13,7 @@ import play.mvc.Result;
  */
 public class Widgets extends Controller {
 
-    public static Result signIn(String callback) throws JsonProcessingException {
+    public static Result signIn(String callback, String channel) throws JsonProcessingException {
 
         ObjectNode result = Json.newObject();
 
@@ -29,7 +29,7 @@ public class Widgets extends Controller {
                     "\t\t\t\t\t\t</div>\n" +
                     "\t\t\t\t\t\t<div class=\"header-text\">\n" +
                     "\t\t\t\t\t\t\t<p>\n" +
-                    "\t\t\t\t\t\t\t\t<span class=\"blue-text\">Sign in to see your</span> <span class=\"pink-text\">b&pound;st</span> deals <span class=\"blue-text\">on</span> car insurance &amp; breakdown cover\n" +
+                    "\t\t\t\t\t\t\t\t<span class=\"blue-text\">Compare the</span> <span class=\"pink-text\">b&pound;st</span><span class=\"blue-text\">where you live</span> on " + channel + " insurance &amp; breakdown cover\n" +
                     "\t\t\t\t\t\t\t</p>\n" +
                     "\t\t\t\t\t\t</div>\n" +
                     "\t\t\t\t\t</div>");
@@ -45,7 +45,7 @@ public class Widgets extends Controller {
                     "\t\t\t\t\t\t</div>\n" +
                     "\t\t\t\t\t\t<div class=\"header-text\">\n" +
                     "\t\t\t\t\t\t\t<p>\n" +
-                    "\t\t\t\t\t\t\t\t<span class=\"blue-text\">Sign in to see your</span> <span class=\"pink-text\">b&pound;st</span> deals <span class=\"blue-text\">on</span> car insurance &amp; breakdown cover\n" +
+                    "\t\t\t\t\t\t\t\t<span class=\"blue-text\">Sign in to see your</span> <span class=\"pink-text\">b&pound;st</span> deals <span class=\"blue-text\">on</span> " + channel + " insurance &amp; breakdown cover\n" +
                     "\t\t\t\t\t\t\t</p>\n" +
                     "\t\t\t\t\t\t</div>\n" +
                     "\t\t\t\t\t</div>");
