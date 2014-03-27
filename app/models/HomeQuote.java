@@ -21,6 +21,8 @@ public class HomeQuote {
 
     private double excess;
 
+    private String detailsUrl;
+
     public String getPolicyType() {
         return policyType;
     }
@@ -45,12 +47,20 @@ public class HomeQuote {
         return excess;
     }
 
-    public HomeQuote(String policyType, double premium, boolean includesLegalCover, boolean includesEmergencyCover, boolean includesNewForOld, double excess) {
+    public String getDetailsUrl() {
+        return detailsUrl;
+    }
+
+    public HomeQuote(String policyType, double premium, 
+        boolean includesLegalCover, boolean includesEmergencyCover, 
+        boolean includesNewForOld, double excess,
+        String detailsUrl) {
         this.policyType = policyType;
         this.premium = premium;
         this.includesLegalCover = includesLegalCover;
         this.includesEmergencyCover = includesEmergencyCover;
         this.includesNewForOld = includesNewForOld;
         this.excess = excess;
+        this.detailsUrl = detailsUrl;
     }
 }

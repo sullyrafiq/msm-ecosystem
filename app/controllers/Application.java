@@ -21,8 +21,12 @@ public class Application extends Controller {
     	return ok(introduction.render("MSM Eco-System"));
     }
 
-     public static Result carDetails() {
+    public static Result carDetails() {
     	return ok(carDetails.render("Policy details - Car Insurance"));
+    }
+
+    public static Result homeDetails() {
+    	return ok(homeDetails.render("Policy details - Home Insurance"));
     }
 
 }

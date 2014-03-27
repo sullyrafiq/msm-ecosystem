@@ -27,4 +27,5 @@ GET         /assets/*file        controllers.Assets.at(path="/public", file)
 
 # Introduction page
 GET         /introduction        controllers.Application.introduction()
-GET 		/car-details			 controllers.Application.carDetails()
+GET 		/car-details		 controllers.Application.carDetails()
+GET 		/home-details		 controllers.Application.homeDetails()
