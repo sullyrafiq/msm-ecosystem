@@ -33,10 +33,10 @@ public class ServicesDao {
     public List<InsuranceQuote> getQuotesForRegistration(String registration){
 
         InsuranceQuote[] insuranceQuotes = {
-                new InsuranceQuote("Cover", 150, "https://www.moneysupermarket.com/mobile-car-insurance/img/logo/HastingsDirect.jpg",       "http://msmeco.co.uk/car-details"),
-                new InsuranceQuote("Cover", 250, "https://www.moneysupermarket.com/mobile-car-insurance/img/logo/admiral2808.gif",          "http://msmeco.co.uk/car-details"),
-                new InsuranceQuote("Cover", 350, "https://www.moneysupermarket.com/mobile-car-insurance/img/logo/bell.jpg",                 "http://msmeco.co.uk/car-details"),
-                new InsuranceQuote("Cover", 450, "https://www.moneysupermarket.com/mobile-car-insurance/img/logo/Kwik_Fit_Platinum.gif",    "http://msmeco.co.uk/car-details")
+                new InsuranceQuote("Cover", 150, "Hastings", "https://www.moneysupermarket.com/mobile-car-insurance/img/logo/HastingsDirect.jpg",       "http://msmeco.co.uk/car-details"),
+                new InsuranceQuote("Cover", 250, "Admiral", "https://www.moneysupermarket.com/mobile-car-insurance/img/logo/admiral2808.gif",          "http://msmeco.co.uk/car-details"),
+                new InsuranceQuote("Cover", 350, "Bell","https://www.moneysupermarket.com/mobile-car-insurance/img/logo/bell.jpg",                 "http://msmeco.co.uk/car-details"),
+                new InsuranceQuote("Cover", 450, "Kwik Fit Platinum","https://www.moneysupermarket.com/mobile-car-insurance/img/logo/Kwik_Fit_Platinum.gif",    "http://msmeco.co.uk/car-details")
         };
 
         return Arrays.asList(insuranceQuotes);

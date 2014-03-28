@@ -51,7 +51,7 @@
         var css_link = $("<link>", {
             rel: "stylesheet",
             type: "text/css",
-            href: "http://localhost:9000/assets/stylesheets/main.css"
+            href: "http://api.msmeco.co.uk/assets/stylesheets/main.css"
         });
         css_link.appendTo('head');
     }
@@ -61,11 +61,12 @@
             contentType:'application/json',
             dataType:'jsonp',
             type: 'GET',
-            url: "http://localhost:9000/sign-in?channel=home"
+            url: "http://api.msmeco.co.uk/sign-in?channel=home"
 
         }).done(function(data) {
             $('div.msm-bar').html(data.html);
             addHandlerForLogin();
+            addHandlerForLogout();
         });
     }
 
@@ -80,7 +81,23 @@
                 contentType:'application/json',
                 dataType:'jsonp',
                 type: 'GET',
-                url: "http://localhost:9000/ajax-login?email=" + email + "&password=" + password
+                url: "http://api.msmeco.co.uk/ajax-login?email=" + email + "&password=" + password
+
+            }).done(function(data) {
+                loadHtml();
+            });
+        })
+    }
+
+    function addHandlerForLogout() {
+        $("input[type=submit]#signout").on("click", function(e) {
+            e.preventDefault();
+
+            $.ajax({
+                contentType:'application/json',
+                dataType:'jsonp',
+                type: 'GET',
+                url: "http://api.msmeco.co.uk/logout"
 
             }).done(function(data) {
                 loadHtml();
