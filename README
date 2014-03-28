@@ -1,4 +1,17 @@
-This is your new Play application
-=====================================
+# MSM Ecosystem (MSM-E)
+===================================== 
 
-This file will be packaged with your application, when using `play dist`.
+Created for the MoneySupermarket hackathon, held in March 2014.   
+
+Third party websites can leverage the MSM-E customer base and data to display car and home insurance quotes. MSM-E makes this possible by providing javascript components (widgets) and JSON API's for third party websites to use.
+
+To learn more go to http://www.msmeco.co.uk/introduction.
+
+### Technologies Used:
+ * Java
+ * Play Framework
+ * Deadbolt 2
+ * JQuery
+ * Javascript
+ * HTML5/CSS3
+ * Twitter Bootstrap
