@@ -31,9 +31,14 @@ public class Login extends Controller {
         }
     }
 
-    public static Result logout() {
+    public static Result logout(String callback) {
         SecurityUtils.removeUserFromSession(session());
-        return ok("You have been logged out");
+
+        if (callback != null) {
+            return createOKJsonPWrappedResult(callback, "{\"success\": true }");
+        } else {
+            return ok("You have been logged out");
+        }
     }
 
     public static Result success() {

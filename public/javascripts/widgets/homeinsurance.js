@@ -66,6 +66,7 @@
         }).done(function(data) {
             $('div.msm-bar').html(data.html);
             addHandlerForLogin();
+            addHandlerForLogout();
         });
     }
 
@@ -81,6 +82,22 @@
                 dataType:'jsonp',
                 type: 'GET',
                 url: "http://localhost:9000/ajax-login?email=" + email + "&password=" + password
+
+            }).done(function(data) {
+                loadHtml();
+            });
+        })
+    }
+
+    function addHandlerForLogout() {
+        $("input[type=submit]#signout").on("click", function(e) {
+            e.preventDefault();
+
+            $.ajax({
+                contentType:'application/json',
+                dataType:'jsonp',
+                type: 'GET',
+                url: "http://localhost:9000/logout"
 
             }).done(function(data) {
                 loadHtml();
