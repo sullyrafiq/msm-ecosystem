@@ -61,7 +61,7 @@
             contentType:'application/json',
             dataType:'jsonp',
             type: 'GET',
-            url: "http://localhost:9000/sign-in"
+            url: "http://localhost:9000/sign-in?channel=home"
 
         }).done(function(data) {
             $('div.msm-bar').html(data.html);

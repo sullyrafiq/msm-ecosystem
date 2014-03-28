@@ -14,7 +14,7 @@ GET         /logout              controllers.Login.logout()
 GET         /success             controllers.Login.success()
 
 # Widget calls
-GET         /sign-in             controllers.Widgets.signIn(callback: String)
+GET         /sign-in             controllers.Widgets.signIn(callback: String, channel: String)
 
 GET         /vehicles/:postcode             controllers.Services.cars(postcode: String)
 GET         /vehicles/insurance/:reg        controllers.Services.motorQuotes(reg: String)
