@@ -33,7 +33,9 @@ public class MSMDeadboltHandler implements DeadboltHandler {
         return F.Promise.promise(new F.Function0<SimpleResult>() {
             @Override
             public SimpleResult apply()  {
-                return forbidden("authentication failure");
+                return forbidden(
+                        "{\"message\":\"authentication failure\"}"
+                );
             }
         });
     }

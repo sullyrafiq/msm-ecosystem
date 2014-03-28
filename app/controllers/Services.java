@@ -26,7 +26,7 @@ import java.util.List;
 public class Services extends Controller {
 
     @SubjectPresent
-    public static Result cars(String postCode) throws JsonProcessingException {
+    public static Result cars(String postCode, String callback) throws JsonProcessingException {
 
         ServicesDao servicesDao = new ServicesDao();
 
@@ -38,11 +38,15 @@ public class Services extends Controller {
 
         String result = JsonUtils.toString(resultsObject);
 
-        return ok(result).as("application/json");
+        if (callback != null) {
+            return createJsonPWrappedResult(callback, result);
+        } else {
+            return ok(result).as("application/json");
+        }
     }
 
     @SubjectPresent
-    public static Result motorQuotes(String registration) throws JsonProcessingException {
+    public static Result motorQuotes(String registration, String callback) throws JsonProcessingException {
 
         ServicesDao servicesDao = new ServicesDao();
 
@@ -54,11 +58,15 @@ public class Services extends Controller {
 
         String result = JsonUtils.toString(resultsObject);
 
-        return ok(result).as("application/json");
+        if (callback != null) {
+            return createJsonPWrappedResult(callback, result);
+        } else {
+            return ok(result).as("application/json");
+        }
     }
 
     @SubjectPresent
-    public static Result homes(String postCode) throws JsonProcessingException {
+    public static Result homes(String postCode, String callback) throws JsonProcessingException {
 
         ServicesDao servicesDao = new ServicesDao();
 
@@ -70,12 +78,16 @@ public class Services extends Controller {
 
         String result = JsonUtils.toString(resultsObject);
 
-        return ok(result).as("application/json");
+        if (callback != null) {
+            return createJsonPWrappedResult(callback, result);
+        } else {
+            return ok(result).as("application/json");
+        }
 
     }
 
     @SubjectPresent
-    public static Result homeQuotes(String postCode) throws JsonProcessingException {
+    public static Result homeQuotes(String postCode, String callback) throws JsonProcessingException {
 
         ServicesDao servicesDao = new ServicesDao();
 
@@ -87,9 +99,16 @@ public class Services extends Controller {
 
         String result = JsonUtils.toString(resultsObject);
 
-        return ok(result).as("application/json");
+        if (callback != null) {
+            return createJsonPWrappedResult(callback, result);
+        } else {
+            return ok(result).as("application/json");
+        }
     }
 
-
+    private static Result createJsonPWrappedResult(String callback, String json) {
+        String content = callback + "(" + json + ")";
+        return ok(content);
+    }
 
 }

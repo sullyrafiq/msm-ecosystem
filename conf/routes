@@ -16,10 +16,10 @@ GET         /success             controllers.Login.success()
 # Widget calls
 GET         /sign-in             controllers.Widgets.signIn(callback: String, channel: String)
 
-GET         /vehicles/:postcode             controllers.Services.cars(postcode: String)
-GET         /vehicles/insurance/:reg        controllers.Services.motorQuotes(reg: String)
-GET         /homes/:postcode                controllers.Services.homes(postcode: String)
-GET         /homes/insurance/:postcode      controllers.Services.homeQuotes(postcode: String)
+GET         /vehicles/:postcode             controllers.Services.cars(postcode: String, callback: String ?= null)
+GET         /vehicles/insurance/:reg        controllers.Services.motorQuotes(reg: String, callback: String ?= null)
+GET         /homes/:postcode                controllers.Services.homes(postcode: String, callback: String ?= null)
+GET         /homes/insurance/:postcode      controllers.Services.homeQuotes(postcode: String, callback: String ?= null)
 
 
 # Map static resources from the /public folder to the /assets URL path
